@@ -6,7 +6,7 @@ Summary:        A library for handling streaming archive formats
 Url:            http://code.google.com/p/libarchive/
 Group:          System/Libraries
 Source0:        http://libarchive.googlecode.com/files/libarchive-%{version}.tar.gz
-Source1001: 	libarchive.manifest
+Source1001:     libarchive.manifest
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  bison
