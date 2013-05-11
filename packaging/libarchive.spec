@@ -57,6 +57,7 @@ find %{buildroot} -name tar.5 -exec rm -f {} ';'
 %postun -p /sbin/ldconfig
 
 %files
+%license COPYING
 %defattr(-,root,root,-)
 %{_libdir}/*.so.*
 
