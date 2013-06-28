@@ -6,6 +6,7 @@ Summary:        A library for handling streaming archive formats
 Url:            http://code.google.com/p/libarchive/
 Group:          System/Libraries
 Source0:        http://libarchive.googlecode.com/files/libarchive-%{version}.tar.gz
+Source1001: 	libarchive.manifest
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  bison
@@ -36,6 +37,7 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 
 %build
@@ -57,12 +59,14 @@ find %{buildroot} -name tar.5 -exec rm -f {} ';'
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root,-)
 %{_libdir}/*.so.*
 
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_includedir}/*
 %{_mandir}/*/*
