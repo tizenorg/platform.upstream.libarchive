@@ -1,7 +1,7 @@
 Name:           libarchive
-Version:        2.8.3
-Release:        1
-License:        BSD
+Version:        3.1.2
+Release:        0
+License:        BSD-2-Clause
 Summary:        A library for handling streaming archive formats
 Url:            http://code.google.com/p/libarchive/
 Group:          System/Libraries
@@ -26,9 +26,15 @@ streaming archive formats, including most popular tar variants, several cpio
 formats, and both BSD and GNU ar variants. It can also write shar archives and
 read ISO9660 CDROM images and ZIP archives.
 
+%package tools
+Summary:        Tools based on %{name}
+Requires:       %{name} = %{version}
+
+%description tools
+Tools based on %{name}.
+
 %package devel
 Summary:        Development files for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}
 
 %description devel
@@ -41,10 +47,8 @@ cp %{SOURCE1001} .
 
 
 %build
-%configure --disable-static \
-    --disable-bsdtar \
-    --disable-bsdcpio
-
+%global optflags    %{optflags} -D_REENTRANT -pipe
+%configure --disable-static --enable-bsdcpio
 make %{?_smp_mflags}
 
 %install
@@ -72,4 +76,8 @@ find %{buildroot} -name tar.5 -exec rm -f {} ';'
 %{_mandir}/*/*
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
+
+%files tools
+%{_bindir}/bsdcpio
+%{_bindir}/bsdtar
 

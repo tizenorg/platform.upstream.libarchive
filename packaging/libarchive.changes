@@ -1,3 +1,7 @@
+* Thu Aug 15 2013 Anas Nashif <anas.nashif@intel.com> upstream/3.1.2@a174a74
+- Update to 3.1.2
+- resetting manifest requested domain to floor
+
 * Sat May 11 2013 Anas Nashif <anas.nashif@intel.com> submit/tizen/20130509.180935@3180c2c
 - Set license using %license
 
