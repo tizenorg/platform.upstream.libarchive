@@ -43,7 +43,7 @@ struct archive_acl_entry {
 	struct archive_mstring name;		/* uname/gname */
 };
 
-struct archive_acl {
+struct __attribute__ ((visibility ("default"))) archive_acl {
 	mode_t		mode;
 	struct archive_acl_entry	*acl_head;
 	struct archive_acl_entry	*acl_p;

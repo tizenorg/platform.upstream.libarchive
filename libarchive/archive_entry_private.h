@@ -70,7 +70,7 @@ struct ae_sparse {
  *
  * TODO: Design a good API for handling sparse files.
  */
-struct archive_entry {
+struct __attribute__ ((visibility ("default"))) archive_entry {
 	struct archive *archive;
 
 	/*

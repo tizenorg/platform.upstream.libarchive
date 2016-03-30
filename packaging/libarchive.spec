@@ -47,6 +47,9 @@ cp %{SOURCE1001} .
 
 
 %build
+export CFLAGS+=" -fvisibility=hidden"
+  export CXXFLAGS+=" -fvisibility=hidden"
+  
 %global optflags    %{optflags} -D_REENTRANT -pipe
 %configure --disable-static --enable-bsdcpio
 make %{?_smp_mflags}

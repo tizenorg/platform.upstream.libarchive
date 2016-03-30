@@ -32,7 +32,7 @@
 #ifndef ARCHIVE_ENTRY_LOCALE_H_INCLUDED
 #define	ARCHIVE_ENTRY_LOCALE_H_INCLUDED
 
-struct archive_entry;
+struct __attribute__ ((visibility ("default"))) archive_entry;
 struct archive_string_conv;
 
 /*

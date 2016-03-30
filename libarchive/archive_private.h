@@ -86,7 +86,7 @@ struct archive_vtable {
 
 struct archive_string_conv;
 
-struct archive {
+struct __attribute__ ((visibility ("default"))) archive {
 	/*
 	 * The magic/state values are used to sanity-check the
 	 * client's usage.  If an API function is called at a

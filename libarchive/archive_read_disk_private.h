@@ -34,10 +34,10 @@
 #define ARCHIVE_READ_DISK_PRIVATE_H_INCLUDED
 
 struct tree;
-struct archive_entry;
+struct __attribute__ ((visibility ("default"))) archive_entry;
 
 struct archive_read_disk {
-	struct archive	archive;
+	struct __attribute__ ((visibility ("default"))) archive	archive;
 
 	/*
 	 * Symlink mode is one of 'L'ogical, 'P'hysical, or 'H'ybrid,
